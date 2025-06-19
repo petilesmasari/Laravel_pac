@@ -16,7 +16,7 @@
                         <div class="px-2 py-3">
                             <p class="mb-3">{{$item->created_at}}</p>
                             <h4 class="mb-3 font-bold">{{$item->judul}}</h4>
-                            <p class="mb-3">#pesantrenmodern</p>
+                            <p class="mb-3">#panahankeren</p>
                             <a href="/detail/{{ $item->slug }}" class="mb-3 text-danger text-decoration-none">Selengkapnya</a>
                         </div>
                     </div>
