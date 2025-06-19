@@ -5,7 +5,7 @@
 <section id="berita" style="margin-top: 50px">
     <div class="container py-5">
         <div class="header text-center py-4">
-            <h2>Berita Kegiatan Pondok Pesantren</h2>
+            <h2>Berita Kegiatan Pontianak Archery Club</h2>
         </div>
 
         <div class="row">

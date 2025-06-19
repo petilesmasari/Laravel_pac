@@ -7,7 +7,7 @@
         <div class="d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center">
                 <div class="stripe-putih me-2"></div>
-                <h5>Kegiatan Santri</h5>
+                <h5>Kegiatan Pontianak Archery Club</h5>
             </div>
         </div>
 

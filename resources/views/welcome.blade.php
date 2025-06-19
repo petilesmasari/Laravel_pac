@@ -5,8 +5,8 @@
         <section id="hero">
             <div class="container">
                 <div class="hero-title text-center" data-aos="fade-up">
-                    <div class="hero-text">Selamat Datang <br> di Pesantren Al-Hijrah </div>
-                    <h5>Pondok Pesantren Modern dengan konsep Islam Kaffah</h5>
+                    <div class="hero-text">Selamat Datang <br> Di Pontianak Archery Club </div>
+                    <h5>Jadilah Bagian dari Keluarga Besar Pontianak Archery Club</h5>
                 </div>
             </div>
         </section>
@@ -18,25 +18,25 @@
                 <div class="row">
                     <div class="col-lg-3 col-6 mb-2" data-aos="fade-up">
                         <div class="d-flex justify-content-between align-items-center p-3 rounded-3 bg-white shadow">
-                            <p class="font-bold">Pendidikan <br> Berkualitas</p>
+                            <p class="font-bold">Atlit <br> Berkualitas</p>
                             <img src="{{ asset('assets/images/ic-book.png')}}" width="50" height="50" alt="Buku" >
                         </div>
                     </div>
                     <div class="col-lg-3 col-6 mb-2" data-aos="fade-up">
                         <div class="d-flex justify-content-between align-items-center p-3 rounded-3 bg-white shadow">
-                            <p class="font-bold">Pendidikan <br> Berakhlak</p>
+                            <p class="font-bold">Atlit <br> Berakhlak</p>
                             <img src="{{ asset('assets/images/ic-globe.png')}}" width="50" height="50" alt="Buku">
                         </div>
                     </div>
                     <div class="col-lg-3 col-6 mb-2" data-aos="fade-up">
                         <div class="d-flex justify-content-between align-items-center p-3 rounded-3 bg-white shadow">
-                            <p class="font-bold">Pendidikan <br> Muamalah</p>
+                            <p class="font-bold">Atlit <br> Cerdas</p>
                             <img src="{{ asset('assets/images/ic-neraca.png')}}" width="50" height="50" alt="Buku" >
                         </div>
                     </div>
                     <div class="col-lg-3 col-6 mb-2" data-aos="fade-up">
                         <div class="d-flex justify-content-between align-items-center p-3 rounded-3 bg-white shadow">
-                            <p class="font-bold">Pendidikan <br> Teknologi</p>
+                            <p class="font-bold">Atlit <br> Berprestasi</p>
                             <img src="{{ asset('assets/images/ic-komputer.png')}}" width="50" height="50" alt="Buku">
                         </div>
                     </div>
@@ -49,7 +49,7 @@
         <section id="berita" class="py-5">
             <div class="container">
                 <div class="header text-center py-4">
-                    <h2>Berita Kegiatan Pondok Pesantren</h2>
+                    <h2>Berita Kegiatan Pontianak Archery Club</h2>
                 </div>
 
                 <div class="row">
@@ -82,14 +82,14 @@
                     <div class="col-lg-6 mb-3">
                         <div class="d-flex align-items-center mb-3">
                             <div class="stripe me-2"></div>
-                            <h5>Daftar Santri</h5>
+                            <h5>Daftar Member</h5>
                         </div>
-                        <h1 class="mb-2">Gabung bersama kami, mewujudkan generasi rabbani</h1>
-                        <p class="mb-3">Pesantren Al Hijrah merupakan pesantren terbaik di Jawa Barat, dengan meluluskan santri dan menjadi ustadz terkemukan mendakwahkan di pelosok nusantara</p>
-                        <button class="btn btn-outline-danger">Register</button>
+                        <h1 class="mb-2">Jadilah Bagian dari Keluarga Besar Pontianak Archery Club</h1>
+                        <p class="mb-3">Pontianak Archery Club adalah tempat yang tepat untuk mengembangkan kemampuan panahan, melatih fokus, dan membangun karakter juara dengan bimbingan pelatih berpengalaman</p>
+                        <button class="btn btn-outline-danger">Daftar</button>
                     </div>
                     <div class="col-lg-6">
-                        <img src="{{ asset('assets/images/il-bg-foto.jpeg')}}" alt="Join" class="img-fluid">
+                        <img src="{{ asset('assets/images/lomba.jpeg')}}" alt="Join" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -100,7 +100,7 @@
         <section id="video" class="py-5">
             <div class="container py-5">
                 <div class="mx-auto" style="max-width: 550px" data-aos="zoom-in">
-                    <iframe width="100%" height="300" src="https://www.youtube.com/embed/A927ale9-vI?si=kMGNqKzUTWy1DBKg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/4wFyiRnAMvU?si=6xy1oZIr9kZ7Tkd-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </div>
         </section>
@@ -110,7 +110,7 @@
         <section id="video_youtube" class="py-5" data-aos="zoom-in">
             <div class="container">
                 <div class="header text-center">
-                    <h2>Berita Kegiatan Pondok Pesantren</h2>
+                    <h2>Video Kegiatan Pontianak Archery Club</h2>
                 </div>
 
                 <div class="row py-5">
@@ -122,7 +122,7 @@
                 </div>
 
                 <div class="footer text-center">
-                    <button class="btn btn-outline-danger font-bold">Berita Lainnya</button>
+                    <button class="btn btn-outline-danger font-bold">Video Lainnya</button>
                 </div>
             </div>
         </section>
@@ -134,7 +134,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="d-flex align-items-center">
                         <div class="stripe-putih me-2"></div>
-                        <h5>Kegiatan Santri</h5>
+                        <h5>Foto Kegiatan</h5>
                     </div>
                     <div>
                         <a href="/foto" class="btn btn-outline-danger">Foto Lainnya</a>
@@ -159,10 +159,10 @@
         <section id="fasilitas" data-aos="zoom-in-up">
             <div class="container py-5">
                 <div class="text-center mb-3">
-                    <h1 class="font-bold">Fasilitas Pesantren</h1>
+                    <h1 class="font-bold">Fasilitas Pontianak Archery Club</h1>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <img src="{{asset('assets/images/bg-fasilitas.jpeg')}}" height="300" alt="">
+                    <img src="{{asset('assets/images/background.jpg')}}" height="300" alt="">
                 </div>
                 <div class="footer text-center py-4">
                     <button class="btn btn-outline-danger font-bold">Fasilitas Lainnya</button>

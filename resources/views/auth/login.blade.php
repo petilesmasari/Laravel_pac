@@ -5,7 +5,7 @@
 <section id="berita" style="margin-top: 50px">
     <div class="container py-5 col-xl-8">
         <div class="text-center py-3-3">
-            <h2>Halaman Login Pesantren</h2>
+            <h2>Halaman Login Admin Pontianak Archery Club</h2>
         </div>
 
         <form action="/login" method="post" class="d-flex flex-column">

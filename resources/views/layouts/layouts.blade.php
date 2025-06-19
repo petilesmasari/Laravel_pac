@@ -7,7 +7,7 @@
         {{-- bootstrap --}}
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-        <title>Pesantren Al-Hijrah</title>
+        <title>Pontianak Archery Club</title>
 
         {{-- Meta untuk tampil di Whatsapp --}}
         @if (Request:: segment(1) == '')
@@ -15,8 +15,8 @@
             <meta name="description" content="Pesantren Moderan dengan Fasilitas Lengkap"/>
             <meta property="og:url" content="http://pesantrenalhijrah.com"/>
             <meta property="og:description" content="Pesantren Al Hijrah" />
-            <meta property="og:image" content="{{ asset('assets/icons/ic-logo.png') }}"> <meta property="og:type" content="article" />
-            <title>Pesantren Al Hijrah</title>
+            <meta property="og:image" content="{{ asset('assets/icons/logo_pac.png') }}"> <meta property="og:type" content="article" />
+            <title>Pontianak Archery Club</title>
         @elseif (Request::segment (1) == 'detail')
             <meta property="og:title" content="{{ $artikel->judul }}" />
             <meta name="description" content="{{ $artikel->judul }}"/>
@@ -24,13 +24,13 @@
             @if ($artikel->image)
                 <meta property="og:image" content="{{ asset('storage/artikel/' . $artikel->image) }}" />
             @else
-                <meta property="og:image" content="{{ asset('assets/icons/ic-logo.png') }}" />
+                <meta property="og:image" content="{{ asset('assets/icons/logo_pac.png') }}" />
             @endif
             <meta property="og:type" content="article" />
-            <title>Pesantren Al Hijrah | {{ $artikel->title }}</title>
+            <title>Pontianak Archery Club | {{ $artikel->title }}</title>
         @endif
 
-        <link rel="shortcut icon" href="{{ asset('assets/icon/ic-logo.ico') }}">
+        <link rel="shortcut icon" href="{{ asset('assets/images/logo_pac.png') }}">
 
         {{-- AOS --}}
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -60,34 +60,11 @@
             <div class="container py-5">
                 <div class="row">
                     <div class="col-12 col-md-3 mb-3">
-                        <h5 class="font-bold mb-3">Navigasi</h5>
+                        <h5 class="font-bold mb-3">Jam Buka</h5>
                         <div class="d-flex">
                             <ul class="nav flex-column">
                                 <li class="nav-item mb-2">
-                                    <a class="nav-link p-0 text-muted" href="#">Berita Sekolah</a>
-                                </li>
-                                <li class="nav-item mb-2">
-                                    <a class="nav-link p-0 text-muted" href="#">Kegiatan Sekolah</a>
-                                </li>
-                                <li class="nav-item mb-2">
-                                    <a class="nav-link p-0 text-muted" href="#">Gallery Sekolah</a>
-                                </li>
-                                <li class="nav-item mb-2">
-                                    <a class="nav-link p-0 text-muted" href="#">Kegiatan Sekolah</a>
-                                </li>
-                            </ul>
-                            <ul class="nav flex-column me-5">
-                                <li class="nav-item mb-2">
-                                    <a class="nav-link p-0 text-muted" href="#">Alumi</a>
-                                </li>
-                                <li class="nav-item mb-2">
-                                    <a class="nav-link p-0 text-muted" href="#">Info PSB</a>
-                                </li>
-                                <li class="nav-item mb-2">
-                                    <a class="nav-link p-0 text-muted" href="#">Prestasi</a>
-                                </li>
-                                <li class="nav-item mb-2">
-                                    <a class="nav-link p-0 text-muted" href="#">Video Kegiatan</a>
+                                    <a class="nav-link p-0 text-muted" href="#">SABTU - MINGGU<br />Sessi 1: 07.30 - 09.00 WIB<br/>Sessi 2: 09.30 - 11.00</a>
                                 </li>
                             </ul>
                         </div>
@@ -103,9 +80,6 @@
                                 <img src="{{asset('assets/icon/fb.svg')}}" alt="FB" height="30" width="30" class="me-2">
                             </a>
                             <a href="#" target="_blank" class="text-decoration-none text-dark">
-                                <img src="{{asset('assets/icon/tiktok.svg')}}" alt="FB" height="30" width="30" class="me-2">
-                            </a>
-                            <a href="#" target="_blank" class="text-decoration-none text-dark">
                                 <img src="{{asset('assets/icon/youtube.svg')}}" alt="FB" height="30" width="30" class="me-2">
                             </a>
                         </div>
@@ -116,43 +90,33 @@
                         <div class="d-flex">
                             <ul class="nav flex-column">
                                 <li class="nav-item mb-2">
-                                    <a class="nav-link p-0 text-muted" href="#">info@alhijra.srch.id</a>
+                                    <a class="nav-link p-0 text-muted" href="#">0896 3187 3410 (Bayu)</a>
                                 </li>
                                 <li class="nav-item mb-2">
-                                    <a class="nav-link p-0 text-muted" href="#">021-XXX-XXX-XXX</a>
-                                </li>
-                                <li class="nav-item mb-2">
-                                    <a class="nav-link p-0 text-muted" href="#">021-XXX-XXX-XXX</a>
-                                </li>
-                                <li class="nav-item mb-2">
-                                    <a class="nav-link p-0 text-muted" href="#">021-XXX-XXX-XXX</a>
+                                    <a class="nav-link p-0 text-muted" href="#">0822 5427 0012 (Danz)</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="col-12 col-md-3">
-                        <h5 class="font-inter font-bold mb-3">Alamat Sekolah</h5>
-                        <p>Jl. Haji Nawi, No 115, Bandung, Jawa Barat</p>
+                        <h5 class="font-inter font-bold mb-3">Alamat</h5>
+                        <p>Jl. Uray Bawadi Gang Sentosa No. 15B, Sungai Bangkong, Kecamatan Pontianak Kota, Kota Pontianak, Kalimantan Barat</p>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.8174245658756!2d109.3229791!3d-0.0383938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e1d595b612c9705%3A0xee52da2c8a70455d!2sPontianak%20Archery%20Club!5e0!3m2!1sid!2sid!4v1749009429242!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
         </section>
         {{-- End Footer --}}
 
-        {{-- Syarat dan Ketentuan --}}
-        <section class="bg-light border-top">
-            <div class="container py-5">
-                <div class="d-flex justify-content-between">
-                <p class="me-4">Syarta & Ketentuan</p>
-                <p>
-                    <a href="#" class="text-decoration-none text-dark">Kebijakan Privacy</a>
-                </p>
-            </div>
-            </div>
+        {{-- Copyright --}}
+        <div class="container">
+                <div class="copyright">
+                    &copy; Copyright <strong><span>PontianakArcheryClub</span></strong>. All Rights Reserved
+                </div>
 
-        </section>
-        {{-- End Syarat dan Ketentuan --}}
+            </div>
+        {{-- Copyright --}}
 
         {{-- bootstrap --}}
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

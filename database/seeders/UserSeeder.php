@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\User;
 
-class UserSeeder extends Seeder
+class Userseeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,11 +14,10 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         $user = [
-            'name' => 'iksan',
-            'email' => 'iksan@gmail.com',
-            'password' => \bcrypt('iksan123')
+            'name' => 'Peti',
+            'email' => 'peti@gmail.com',
+            'password' => \bcrypt('peti123')
         ];
-
         User::insert($user);
     }
 }

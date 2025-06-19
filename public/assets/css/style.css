@@ -76,7 +76,7 @@ body {
 
 /* Video */
 #video {
-    background-image: url('../../assets/images/il-bg-video.png');
+    background-image: url('../../assets/images/bg-videos.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -97,7 +97,7 @@ body {
 }
 
 .parallax {
-    background-image: url('../../assets/images/il-bg-foto.jpeg');
+    background-image: url('../../assets/images/arrows.jpg');
 }
 
 .stripe-putih {
