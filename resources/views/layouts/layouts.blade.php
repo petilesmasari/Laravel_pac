@@ -11,16 +11,16 @@
 
         {{-- Meta untuk tampil di Whatsapp --}}
         @if (Request:: segment(1) == '')
-            <meta property="og:title" content="Pesantren Al Hijrah"/>
+            <meta property="og:title" content="Pontianak Archery Club"/>
             <meta name="description" content="Pesantren Moderan dengan Fasilitas Lengkap"/>
-            <meta property="og:url" content="http://pesantrenalhijrah.com"/>
-            <meta property="og:description" content="Pesantren Al Hijrah" />
+            <meta property="og:url" content="http://pontianakarcheryclub.com"/>
+            <meta property="og:description" content="Pontianak Archery Club" />
             <meta property="og:image" content="{{ asset('assets/icons/logo_pac.png') }}"> <meta property="og:type" content="article" />
             <title>Pontianak Archery Club</title>
         @elseif (Request::segment (1) == 'detail')
             <meta property="og:title" content="{{ $artikel->judul }}" />
             <meta name="description" content="{{ $artikel->judul }}"/>
-            <meta property="og:url" content="http://pesantrenalhijrah.com/detail/{{ $artikel->slug }}" /> <meta property="og:description" content="{{ $artikel->judul }}" />
+            <meta property="og:url" content="http://pontianakarcheryclub.com/detail/{{ $artikel->slug }}" /> <meta property="og:description" content="{{ $artikel->judul }}" />
             @if ($artikel->image)
                 <meta property="og:image" content="{{ asset('storage/artikel/' . $artikel->image) }}" />
             @else
@@ -72,19 +72,23 @@
 
                     <div class="col-12 col-md-3 mb-3">
                         <h5 class="font-bold mb-3">Follow Kami</h5>
-                        <div class="d-flex mb-3">
-                            <a href="#" target="_blank" class="text-decoration-none text-dark">
-                                <img src="{{asset('assets/icon/instagram.svg')}}" alt="FB" height="30" width="30" class="me-2">
-                            </a>
-                            <a href="#" target="_blank" class="text-decoration-none text-dark">
-                                <img src="{{asset('assets/icon/fb.svg')}}" alt="FB" height="30" width="30" class="me-2">
-                            </a>
-                            <a href="#" target="_blank" class="text-decoration-none text-dark">
-                                <img src="{{asset('assets/icon/youtube.svg')}}" alt="FB" height="30" width="30" class="me-2">
-                            </a>
+                            <div class="d-flex mb-3">
+                                <!-- Instagram Link -->
+                                <a href="https://www.instagram.com/pontianakarchery" target="_blank" class="text-decoration-none text-dark">
+                                    <img src="{{asset('assets/icon/instagram.svg')}}" alt="Instagram" height="30" width="30" class="me-2">
+                                </a>
+        
+                                <!-- Facebook Link -->
+                                <a href="https://www.facebook.com/pontianakarcheryclub" target="_blank" class="text-decoration-none text-dark">
+                                    <img src="{{asset('assets/icon/fb.svg')}}" alt="Facebook" height="30" width="30" class="me-2">
+                                </a>
+        
+                                <!-- YouTube Link -->
+                                <a href="https://www.youtube.com/BangDanz" target="_blank" class="text-decoration-none text-dark">
+                                    <img src="{{asset('assets/icon/youtube.svg')}}" alt="YouTube" height="30" width="30" class="me-2">
+                                </a>
+                            </div>
                         </div>
-                    </div>
-
                     <div class="col-12 col-md-3 mb-3">
                         <h5 class="font-bold mb-3">Kontak Kami</h5>
                         <div class="d-flex">

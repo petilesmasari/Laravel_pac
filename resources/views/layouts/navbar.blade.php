@@ -1,6 +1,5 @@
 {{-- Navbar --}}
-<nav class="navbar navbar-expand-lg py-3 fixed-top {{ Request::segment(1) == '' ? '' : 'bg-white shadow'}}
-">
+<nav class="navbar navbar-expand-lg py-3 fixed-top {{ Request::segment(1) == '' ? '' : 'bg-white shadow'}}">
     <div class="container">
         <a class="navbar-brand" href="/">
             <img src="{{ asset('assets/images/logo_pac.png')}}" width="40" height="40" alt="">
@@ -19,9 +18,9 @@
                         Profil
                     </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item text-dark" href="about">Sejarah</a></li>
-                    <li><a class="dropdown-item text-dark" href="team">Visi Misi</a></li>
-                    <li><a class="dropdown-item text-dark" href="testimonials">Struktur Organisasi</a></li>
+                    <li><a class="dropdown-item text-dark" href="sejarah">Sejarah</a></li>
+                    <li><a class="dropdown-item text-dark" href="visi_misi">Visi Misi</a></li>
+                    <li><a class="dropdown-item text-dark" href="struktur_organisasi">Struktur Organisasi</a></li>
                 </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -30,16 +29,16 @@
                         Membership
                     </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item text-dark" href="about">Syarat Jadi Member</a></li>
-                    <li><a class="dropdown-item text-dark" href="team">Daftar Jadi Member</a></li>
-                    <li><a class="dropdown-item text-dark" href="testimonials">Best Skor</a></li>
+                    <li><a class="dropdown-item text-dark" href="syarat_member">Syarat Jadi Member</a></li>
+                    <li><a class="dropdown-item text-dark" href="daftar_member">Daftar Jadi Member</a></li>
+                    <li><a class="dropdown-item text-dark" href="best_skor">Best Skor</a></li>
                 </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="#">Program</a>
+                    <a class="nav-link text-dark" href="program">Program</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="#">Berita</a>
+                    <a class="nav-link text-dark" href="berita">Berita & Agenda</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
@@ -47,8 +46,8 @@
                         Galery
                     </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item text-dark" href="about">Foto</a></li>
-                    <li><a class="dropdown-item text-dark" href="team">Video</a></li>
+                    <li><a class="dropdown-item text-dark" href="foto">Foto</a></li>
+                    <li><a class="dropdown-item text-dark" href="video">Video</a></li>
                 </ul>
                 </li>
             </ul>
@@ -59,14 +58,11 @@
                         <button class="btn btn-dark" class="dropdown-item">Logout</button>
                     </form>
                 @else
-                    <a href="/login" class="btn btn-danger">Registrasi</a>
+                    <a href="/register" class="btn btn-outline-danger me-2">Register</a>
+                    <a href="/login" class="btn btn-danger">Login</a>
                 @endauth
-
             </div>
         </div>
     </div>
-    
 </nav>
 {{-- End Navbar --}}
-
-
