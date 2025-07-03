@@ -8,7 +8,7 @@
         <div class="header text py-4">
             <h2>Sejarah Klub</h2>
         </div>
-        <img src="{{ asset('assets/images/arrows.jpg') }}" class="img-fluid rounded mb-4" alt="Gambar Sejarah Klub">
+        <img src="{{ asset('assets/images/sejarah.jpeg') }}" class="img-fluid rounded mb-4" alt="Gambar Sejarah Klub">
         <p>
             Klub panahan ini didirikan pada tahun XXXX oleh sekelompok pecinta olahraga panahan
             yang memiliki semangat tinggi dalam mengembangkan prestasi dan membina generasi muda.

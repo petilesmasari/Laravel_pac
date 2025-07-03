@@ -70,6 +70,20 @@ Route::middleware('auth')->controller(\App\Http\Controllers\VideoController::cla
 Route::get('/sejarah', function () {
     return view('profil.sejarah');
 });
+
+// Route::prefix('admin')->middleware(['auth'])->group(function () {
+//     Route::resource('sejarah', App\Http\Controllers\Admin\SejarahController::class)->names('admin.sejarah');
+// });
+// Route::middleware('auth')->controller(\App\Http\Controllers\SejarahController::class)->group(function () {
+//     Route::get('/sejarah', 'index')->name('sejarah');
+//     Route::get('/sejarah/create', 'create')->name('sejarah.create');
+//     Route::post('/sejarah/store', 'store')->name('sejarah.store');
+//     Route::get('/sejarah/edit/{id}', 'edit')->name('sejarah.edit');
+//     Route::post('/sejarah/update/{id}', 'update')->name('sejarah.update');
+//     Route::post('/sejarah/destroy/{id}', 'destroy')->name('sejarah.destroy');
+// });
+
+
 Route::get('/visi_misi', function () {
     return view('profil.visi_misi');
 });
@@ -94,5 +108,11 @@ Route::get('/best_skor', function () {
 });
 
 // Route::get('/skor', [App\Http\Controllers\SkorController::class, 'index'])->name('skor.bulanan');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin', function () {
+        return view('admin.index');
+    })->name('dashboard');
+});
 
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 

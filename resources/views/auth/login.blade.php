@@ -8,7 +8,7 @@
                 <div class="card shadow">
                     <div class="card-body p-4">
                         <div class="text-center mb-4">
-                            <h4>Login Admin</h4>
+                            <h4>Halaman Login</h4>
                             <p class="text-muted">Pontianak Archery Club</p>
                         </div>
                         

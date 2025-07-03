@@ -7,6 +7,7 @@
     <div class="container py-5">
         <div class="header text-center py-4">
             <h2>Struktur Organisasi Klub</h2>
+             <img src="{{ asset('assets/images/ketua-pac.jpeg') }}" class="img-fluid rounded mb-4" alt="Gambar Sejarah Klub">
         </div>
         
         <p>Berikut adalah susunan struktur organisasi klub panahan kami:</p>

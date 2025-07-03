@@ -30,13 +30,13 @@
                     </div>
                     <div class="col-lg-3 col-6 mb-2" data-aos="fade-up">
                         <div class="d-flex justify-content-between align-items-center p-3 rounded-3 bg-white shadow">
-                            <p class="font-bold">Atlit <br> Cerdas</p>
-                            <img src="{{ asset('assets/images/ic-neraca.png')}}" width="50" height="50" alt="Buku" >
+                            <p class="font-bold">Atlit <br> Berprestasi</p>
+                            <img src="{{ asset('assets/images/ic-panah.png')}}" width="50" height="50" alt="Buku" >
                         </div>
                     </div>
                     <div class="col-lg-3 col-6 mb-2" data-aos="fade-up">
                         <div class="d-flex justify-content-between align-items-center p-3 rounded-3 bg-white shadow">
-                            <p class="font-bold">Atlit <br> Berprestasi</p>
+                            <p class="font-bold">Atlit <br>Cerdas</p>
                             <img src="{{ asset('assets/images/ic-komputer.png')}}" width="50" height="50" alt="Buku">
                         </div>
                     </div>
@@ -156,7 +156,7 @@
         {{-- End Foto --}}
 
         {{-- Fasilitas --}}
-        <section id="fasilitas" data-aos="zoom-in-up">
+        {{-- <section id="fasilitas" data-aos="zoom-in-up">
             <div class="container py-5">
                 <div class="text-center mb-3">
                     <h1 class="font-bold">Fasilitas Pontianak Archery Club</h1>
@@ -168,7 +168,7 @@
                     <button class="btn btn-outline-danger font-bold">Fasilitas Lainnya</button>
                 </div>
             </div>
-        </section>
+        </section> --}}
         {{-- End Fasilitas --}}
 
 @endsection

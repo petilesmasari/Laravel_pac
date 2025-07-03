@@ -3,9 +3,11 @@
 @section('title', 'Daftar Jadi Member')
 
 @section('content')
-<section style="margin-top: 80px">
-    <div class="container py-5 col-lg-9">
-        <h3 class="fw-bold mb-4">Formulir Daftar Member</h3>
+<section id="berita" style="margin-top: 50px">
+    <div class="container py-5">
+        <div class="header text-center py-4">
+            <h2>Formulir Daftar Member</h2>
+        </div>
 
         <form action="#" method="POST">
             @csrf
