@@ -82,11 +82,11 @@
                     <div class="col-lg-6 mb-3">
                         <div class="d-flex align-items-center mb-3">
                             <div class="stripe me-2"></div>
-                            <h5>Daftar Member</h5>
+                            <h5> Daftar Member </h5>
                         </div>
                         <h1 class="mb-2">Jadilah Bagian dari Keluarga Besar Pontianak Archery Club</h1>
                         <p class="mb-3">Pontianak Archery Club adalah tempat yang tepat untuk mengembangkan kemampuan panahan, melatih fokus, dan membangun karakter juara dengan bimbingan pelatih berpengalaman</p>
-                        <button class="btn btn-outline-danger">Daftar</button>
+                        <a href="{{ route('membership.daftar') }}" class="btn btn-outline-danger">Daftar</a>
                     </div>
                     <div class="col-lg-6">
                         <img src="{{ asset('assets/images/lomba.jpeg')}}" alt="Join" class="img-fluid">
@@ -122,7 +122,7 @@
                 </div>
 
                 <div class="footer text-center">
-                    <button class="btn btn-outline-danger font-bold">Video Lainnya</button>
+                    <a href="/video" class="btn btn-outline-danger font-bold">Video Lainnya</a>
                 </div>
             </div>
         </section>
@@ -154,21 +154,4 @@
             </div>
         </section>
         {{-- End Foto --}}
-
-        {{-- Fasilitas --}}
-        {{-- <section id="fasilitas" data-aos="zoom-in-up">
-            <div class="container py-5">
-                <div class="text-center mb-3">
-                    <h1 class="font-bold">Fasilitas Pontianak Archery Club</h1>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <img src="{{asset('assets/images/background.jpg')}}" height="300" alt="">
-                </div>
-                <div class="footer text-center py-4">
-                    <button class="btn btn-outline-danger font-bold">Fasilitas Lainnya</button>
-                </div>
-            </div>
-        </section> --}}
-        {{-- End Fasilitas --}}
-
 @endsection

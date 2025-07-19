@@ -1,7 +1,11 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\MemberController;
+use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\VideoController;
+use App\Models\Video;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,19 +25,16 @@ Route::controller(\App\Http\Controllers\AppController::class)->group(function() 
     Route::get('/detail/{slug}', 'detail')->name('berita.detail');
 });
 
-Route::get('/foto', function () {
-    return view('foto.foto');
-});
+Route::get('/foto', [PhotoController::class, 'galeriFrontend']);
 
 Route::controller(\App\Http\Controllers\AuthController::class)->group(function() {
     Route::get('/login', 'index')->middleware('guest')->name('login');
     Route::post('/login', 'authenticate');
     Route::post('/logout', 'logout');
     
-    Route::get('/register', 'showRegistrationForm')->middleware('guest')->name('register');
-    Route::post('/register', 'register');
-    Route::get('/registration-success', [AuthController ::class, 'showRegistrationSuccess'])
-     ->name('registration.success');
+    // Route::get('/register', 'showRegistrationForm')->middleware('guest')->name('register');
+    // Route::post('/register', 'register');
+    // Route::get('/registration-success', [AuthController ::class, 'showRegistrationSuccess'])->name('registration.success');
 });
 
 Route::controller(\App\Http\Controllers\DashboardController::class)->group(function () {
@@ -59,11 +60,22 @@ Route::middleware('auth')->controller(\App\Http\Controllers\PhotoController::cla
     Route::post('/photo/destroy/{id}', 'destroy')->name('photo.destroy');
 });
 
+Route::get('/video', [VideoController::class, 'videoFrontend']);
 Route::middleware('auth')->controller(\App\Http\Controllers\VideoController::class)->group(function () {
-    Route::get('/video', 'index')->name('video');
-    Route::post('/video/store', 'store')->name('video.store');
-    Route::post('/video/update/{id}', 'update')->name('video.update');
-    Route::post('/video/destroy/{id}', 'destroy')->name('video.destroy');
+    Route::get('/videos', 'index')->name('videos');
+    Route::post('/videos/store', 'store')->name('videos.store');
+    Route::post('/videos/update/{id}', 'update')->name('videos.update');
+    Route::post('/videos/destroy/{id}', 'destroy')->name('videos.destroy');
+});
+
+// ROUTE FRONTEND - untuk pengunjung (tanpa login)
+Route::get('/program', [ProgramController::class, 'programFrontend'])->name('programs');
+
+Route::middleware('auth')->controller(\App\Http\Controllers\ProgramController::class)->group(function () {
+    Route::get('/programs', 'index')->name('programs');
+    Route::post('/programs/store', 'store')->name('programs.store');
+    Route::post('/programs/update/{id}', 'update')->name('programs.update');
+    Route::post('/programs/destroy/{id}', 'destroy')->name('programs.destroy');
 });
 
 //Sejarah
@@ -91,28 +103,44 @@ Route::get('/struktur_organisasi', function () {
     return view('profil.struktur_organisasi');
 });
 
-//Program
-Route::get('/program', function () {
-    return view('program.index');
-});
-
 //Membership
 Route::get('/syarat_member', function () {
     return view('membership.syarat');
 });
-Route::get('/daftar_member', function () {
-    return view('membership.daftar');
-});
+// Route::get('/daftar_member', function () {
+//     return view('membership.daftar');
+// });
 Route::get('/best_skor', function () {
     return view('membership.best_skor');
 });
 
-// Route::get('/skor', [App\Http\Controllers\SkorController::class, 'index'])->name('skor.bulanan');
-Route::middleware(['auth'])->group(function () {
-    Route::get('/admin', function () {
-        return view('admin.index');
-    })->name('dashboard');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// Route untuk pendaftaran member
+Route::prefix('membership')->group(function () {
+    Route::get('/daftar', function () {return redirect()->route('daftar');});
+    Route::get('/membership.daftar', [MemberController::class, 'create'])->name('membership.daftar');
+    Route::post('/membership.store', [MemberController::class, 'store'])->name('membership.store');
+    Route::get('terima-kasih', function () {return view('membership.thankyou');})->name('membership.thankyou');
 });
 
-Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+// Route admin untuk mengelola member
+Route::get('/members', [MemberController::class, 'videoFrontend']);
+Route::middleware('auth')->controller(\App\Http\Controllers\MemberController::class)->group(function () {
+    Route::get('/members', 'index')->name('members');
+    Route::post('/members/store', 'store')->name('members.store');
+    Route::post('/members/update/{id}', 'update')->name('members.update');
+    Route::post('/members/destroy/{id}', 'destroy')->name('members.destroy');
+});
+
+Route::middleware('auth')->prefix('admin')->name('admin.')->controller(MemberController::class)->group(function () {
+    Route::get('/members', 'index')->name('members.index');
+    Route::get('/members/create', 'create')->name('members.create');
+    Route::post('/members', 'store')->name('members.store');
+    Route::get('/members/{member}', 'show')->name('members.show');
+    Route::get('/members/{member}/edit', 'edit')->name('members.edit');
+    Route::put('/members/{member}', 'update')->name('members.update');
+    Route::delete('/members/{member}', 'destroy')->name('members.destroy');
+});
+
 

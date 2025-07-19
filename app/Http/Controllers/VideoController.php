@@ -9,7 +9,7 @@ class VideoController extends Controller
 {
     public function index()
     {
-        return view('admin.video.index', [
+        return view('admin.videos.index', [
             'videos' => Video::orderBy('id', 'desc')->get()
         ]);
     }
@@ -66,4 +66,11 @@ class VideoController extends Controller
         $video->delete();
         return redirect(route('video'))->with('success', 'data video berhasil di hapus');
     }
+
+    public function videoFrontend()
+    {
+        $videos = Video::orderBy('id', 'desc')->get(); // Sesuaikan dengan nama model
+        return view('video.index', compact('videos')); // Ganti 'video.index' sesuai nama file blade-nya
+    }
+
 }

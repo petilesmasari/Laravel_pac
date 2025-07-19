@@ -55,9 +55,6 @@
                 </tbody>
             </table>
         </div>
-
-
-
     </div>
 </section>
 {{-- End Berita --}}

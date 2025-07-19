@@ -41,11 +41,12 @@ class AuthController extends Controller
         $user = Auth::user();
         if ($user->role === 'admin') {
             return redirect('/dashboard');
-        } elseif ($user->role === 'member') {
-            return redirect('/dashboard-member');
-        } else {
-            return redirect('/dashboard');
-        }
+        } 
+        // elseif ($user->role === 'member') {
+        //     return redirect('/dashboard-member');
+        // } else {
+        //     return redirect('/dashboard');
+        // }
     }
 
         return back()->with('loginError', 'Login Gagal, Periksa kembali Akun Anda!');

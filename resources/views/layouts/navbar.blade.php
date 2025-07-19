@@ -30,7 +30,7 @@
                     </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <li><a class="dropdown-item text-dark" href="syarat_member">Syarat Jadi Member</a></li>
-                    <li><a class="dropdown-item text-dark" href="daftar_member">Daftar Jadi Member</a></li>
+                    <li><a class="dropdown-item text-dark" href="{{ route('membership.daftar') }}">Daftar Jadi Member</a></li>
                     <li><a class="dropdown-item text-dark" href="best_skor">Best Skor</a></li>
                 </ul>
                 </li>
@@ -58,8 +58,8 @@
                         <button class="btn btn-dark" class="dropdown-item">Logout</button>
                     </form>
                 @else
-                    <a href="/register" class="btn btn-outline-danger me-2">Register</a>
-                    <a href="/login" class="btn btn-danger">Login</a>
+                    {{-- <a href="/register" class="btn btn-outline-danger me-2">Register</a>
+                    <a href="/login" class="btn btn-danger">Login</a> --}}
                 @endauth
             </div>
         </div>

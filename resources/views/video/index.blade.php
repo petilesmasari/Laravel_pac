@@ -2,12 +2,11 @@
 
 @section('content')
 {{-- Video Youtube --}}
-        <section id="video_youtube" class="py-5" data-aos="zoom-in">
-            <div class="container">
-                <div class="header text-center">
-                    <h2>Video Kegiatan Pontianak Archery Club</h2>
-                </div>
-
+<section id="video-youtube" style="margin-top: 50px">
+    <div class="container py-5">
+        <div class="header text-center py-4">
+            <h2>Video Kegiatan Pontianak Archery Club</h2>
+        </div>
                 <div class="row py-5">
                     @foreach ($videos as $video)
                     <div class="col-lg-4">

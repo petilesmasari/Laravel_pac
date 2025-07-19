@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\Photo;
+use App\Models\Program;
 use App\Models\Video;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,7 @@ class AppController extends Controller
             'artikels' => Blog::orderBy('id', 'desc')->limit(3)->get(),
             'videos' => Video::orderBy('id', 'desc')->limit(3)->get(),
             'photos' => Photo::orderBy('id', 'desc')->limit(4)->get(),
+            'program' => Program::orderBy('id', 'desc')->limit(4)->get(),
         ]);
     }
 

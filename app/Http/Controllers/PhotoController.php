@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Photo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class PhotoController extends Controller
 {
@@ -90,5 +91,11 @@ class PhotoController extends Controller
         }
         $photo->delete();
         return redirect(route('photo'))->with('success', 'data berhasil di hapus');
+    }
+
+    public function galeriFrontend()
+    {
+        $photos = Photo::orderBy('id', 'desc')->get();
+        return view('foto.foto', compact('photos'));
     }
 }
