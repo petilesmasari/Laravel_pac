@@ -18,9 +18,9 @@
                         Profil
                     </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item text-dark" href="sejarah">Sejarah</a></li>
-                    <li><a class="dropdown-item text-dark" href="visi_misi">Visi Misi</a></li>
-                    <li><a class="dropdown-item text-dark" href="struktur_organisasi">Struktur Organisasi</a></li>
+                    <li><a class="dropdown-item text-dark" href="/sejarah">Sejarah</a></li>
+                    <li><a class="dropdown-item text-dark" href="/visi_misi">Visi Misi</a></li>
+                    <li><a class="dropdown-item text-dark" href="/struktur_organisasi">Struktur Organisasi</a></li>
                 </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -29,25 +29,25 @@
                         Membership
                     </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item text-dark" href="syarat_member">Syarat Jadi Member</a></li>
+                    <li><a class="dropdown-item text-dark" href="/syarat_member">Syarat Jadi Member</a></li>
                     <li><a class="dropdown-item text-dark" href="{{ route('membership.daftar') }}">Daftar Jadi Member</a></li>
-                    <li><a class="dropdown-item text-dark" href="best_skor">Best Skor</a></li>
+                    <li><a class="dropdown-item text-dark" href="{{ route('skorfrontend') }}">Best Skor</a></li>
                 </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="program">Program</a>
+                    <a class="nav-link text-dark" href="/program">Program</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="berita">Berita & Agenda</a>
+                    <a class="nav-link text-dark" href="/berita">Berita</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
-                        Galery
+                        Galeri
                     </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item text-dark" href="foto">Foto</a></li>
-                    <li><a class="dropdown-item text-dark" href="video">Video</a></li>
+                    <li><a class="dropdown-item text-dark" href="/foto">Foto</a></li>
+                    <li><a class="dropdown-item text-dark" href="/video">Video</a></li>
                 </ul>
                 </li>
             </ul>

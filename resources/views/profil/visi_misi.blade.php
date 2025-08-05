@@ -8,19 +8,14 @@
         <div class="header text-center py-4">
             <h2>Visi & Misi Klub</h2>
         </div>
-        <h5 class="fw-bold">Visi</h5>
-        <p>
-            Menjadi klub panahan yang unggul dan berprestasi di tingkat nasional
-            serta menjadi wadah pembinaan atlet yang profesional dan berintegritas.
-        </p>
 
-        <h5 class="fw-bold mt-4">Misi</h5>
-        <ul>
-            <li>Menyelenggarakan pelatihan panahan yang berkualitas dan berkelanjutan.</li>
-            <li>Mencetak atlet yang berprestasi dan menjunjung tinggi sportivitas.</li>
-            <li>Membangun kerja sama dengan berbagai pihak untuk mendukung pengembangan olahraga panahan.</li>
-            <li>Menyediakan fasilitas dan sarana latihan yang memadai.</li>
-        </ul>
+        <!-- Visi Misi -->
+        <div class="mb-4" data-aos="fade-up">
+            <ol>
+                <li>Menjadikan panahan sebagai sarana membentuk generasi tangguh dan berkarakter.</li>
+                <li>Mengembangkan olahraga panahan sebagai sarana rekreasi, edukasi dan prestasi.</li>
+            </ol>
+        </div>
     </div>
 </section>
 @endsection

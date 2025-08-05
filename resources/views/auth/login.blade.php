@@ -41,10 +41,6 @@
                             <div class="d-grid">
                                 <button type="submit" class="btn btn-primary">Login</button>
                             </div>
-                            
-                            <div class="text-center mt-3">
-                                <small>Belum punya akun? <a href="/register">Daftar disini</a></small>
-                            </div>
                         </form>
                     </div>
                 </div>

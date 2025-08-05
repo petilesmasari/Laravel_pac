@@ -1,11 +1,12 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\SkorController;
 use App\Http\Controllers\VideoController;
-use App\Models\Video;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,19 +31,19 @@ Route::get('/foto', [PhotoController::class, 'galeriFrontend']);
 Route::controller(\App\Http\Controllers\AuthController::class)->group(function() {
     Route::get('/login', 'index')->middleware('guest')->name('login');
     Route::post('/login', 'authenticate');
-    Route::post('/logout', 'logout');
-    
-    // Route::get('/register', 'showRegistrationForm')->middleware('guest')->name('register');
-    // Route::post('/register', 'register');
-    // Route::get('/registration-success', [AuthController ::class, 'showRegistrationSuccess'])->name('registration.success');
+    Route::post('/logout', 'logout')->middleware('auth');
 });
 
-Route::controller(\App\Http\Controllers\DashboardController::class)->group(function () {
-    Route::get('/dashboard', 'index')->name('dashboard')->middleware('auth');
-    Route::get('/blog', function () {
-        return view('admin.blog.index');
-    });
-});
+// Route::controller(\App\Http\Controllers\DashboardController::class)->group(function () {
+//     Route::get('/dashboard', 'index')->name('dashboard')->middleware('auth');
+//     Route::get('/blog', function () {
+//         return view('admin.index');
+//     });
+// });
+
+Route::get('/dashboard', [DashboardController::class, 'index'])
+    ->middleware('auth')
+    ->name('dashboard');
 
 Route::middleware('auth')->controller(\App\Http\Controllers\BlogController::class)->group(function () {
     Route::get('/blog', 'index')->name('blog');
@@ -68,33 +69,20 @@ Route::middleware('auth')->controller(\App\Http\Controllers\VideoController::cla
     Route::post('/videos/destroy/{id}', 'destroy')->name('videos.destroy');
 });
 
-// ROUTE FRONTEND - untuk pengunjung (tanpa login)
+
 Route::get('/program', [ProgramController::class, 'programFrontend'])->name('programs');
 
 Route::middleware('auth')->controller(\App\Http\Controllers\ProgramController::class)->group(function () {
     Route::get('/programs', 'index')->name('programs');
     Route::post('/programs/store', 'store')->name('programs.store');
-    Route::post('/programs/update/{id}', 'update')->name('programs.update');
-    Route::post('/programs/destroy/{id}', 'destroy')->name('programs.destroy');
+    Route::put('/programs/update/{id}', 'update')->name('programs.update');
+    Route::delete('/programs/destroy/{id}', 'destroy')->name('programs.destroy');
 });
 
 //Sejarah
 Route::get('/sejarah', function () {
     return view('profil.sejarah');
 });
-
-// Route::prefix('admin')->middleware(['auth'])->group(function () {
-//     Route::resource('sejarah', App\Http\Controllers\Admin\SejarahController::class)->names('admin.sejarah');
-// });
-// Route::middleware('auth')->controller(\App\Http\Controllers\SejarahController::class)->group(function () {
-//     Route::get('/sejarah', 'index')->name('sejarah');
-//     Route::get('/sejarah/create', 'create')->name('sejarah.create');
-//     Route::post('/sejarah/store', 'store')->name('sejarah.store');
-//     Route::get('/sejarah/edit/{id}', 'edit')->name('sejarah.edit');
-//     Route::post('/sejarah/update/{id}', 'update')->name('sejarah.update');
-//     Route::post('/sejarah/destroy/{id}', 'destroy')->name('sejarah.destroy');
-// });
-
 
 Route::get('/visi_misi', function () {
     return view('profil.visi_misi');
@@ -107,12 +95,19 @@ Route::get('/struktur_organisasi', function () {
 Route::get('/syarat_member', function () {
     return view('membership.syarat');
 });
-// Route::get('/daftar_member', function () {
-//     return view('membership.daftar');
-// });
-Route::get('/best_skor', function () {
-    return view('membership.best_skor');
+
+
+
+Route::get('/skor', [SkorController::class, 'skorFrontend'])->name('skorfrontend');
+
+Route::middleware('auth')->controller(\App\Http\Controllers\SkorController::class)->group(function () {
+    Route::get('/skors', 'index')->name('skors'); // halaman admin
+    Route::post('/skors/store', 'store')->name('skors.store');
+    Route::put('/skors/update/{id}', 'update')->name('skors.update');
+    Route::delete('/skors/destroy/{id}', 'destroy')->name('skors.destroy');
+    Route::get('/skors/export-pdf/{bulan}', 'exportPDF')->name('skors.export.pdf');
 });
+
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
@@ -124,15 +119,10 @@ Route::prefix('membership')->group(function () {
     Route::get('terima-kasih', function () {return view('membership.thankyou');})->name('membership.thankyou');
 });
 
-// Route admin untuk mengelola member
-Route::get('/members', [MemberController::class, 'videoFrontend']);
-Route::middleware('auth')->controller(\App\Http\Controllers\MemberController::class)->group(function () {
-    Route::get('/members', 'index')->name('members');
-    Route::post('/members/store', 'store')->name('members.store');
-    Route::post('/members/update/{id}', 'update')->name('members.update');
-    Route::post('/members/destroy/{id}', 'destroy')->name('members.destroy');
-});
+// Untuk pengunjung
+Route::get('/members', [MemberController::class, 'index']);
 
+// Untuk admin yang sudah login
 Route::middleware('auth')->prefix('admin')->name('admin.')->controller(MemberController::class)->group(function () {
     Route::get('/members', 'index')->name('members.index');
     Route::get('/members/create', 'create')->name('members.create');
@@ -142,5 +132,6 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->controller(MemberCon
     Route::put('/members/{member}', 'update')->name('members.update');
     Route::delete('/members/{member}', 'destroy')->name('members.destroy');
 });
+
 
 

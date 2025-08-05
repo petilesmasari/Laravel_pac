@@ -14,10 +14,6 @@
                     </div>
                     @endforeach
                 </div>
-
-                <div class="footer text-center">
-                    <button class="btn btn-outline-danger font-bold">Video Lainnya</button>
-                </div>
             </div>
         </section>
         {{-- End Video Youtube --}}

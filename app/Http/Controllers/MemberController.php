@@ -8,16 +8,26 @@ use Illuminate\Support\Facades\Storage;
 
 class MemberController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $members = Member::latest()->get();
+        $query = Member::query();
+
+        // Filter berdasarkan status jika ada query ?status=...
+        if ($request->filled('status')) {
+            $query->where('status', $request->status);
+        }
+
+        $members = $query->latest()->get();
+
         return view('admin.members.index', compact('members'));
     }
 
-    public function edit(Member $member)
+    public function edit($id)
     {
+        $member = Member::findOrFail($id);
         return view('admin.members.edit', compact('member'));
     }
+
 
     public function update(Request $request, Member $member)
     {
@@ -49,7 +59,7 @@ class MemberController extends Controller
 
         $member->update($validated);
 
-        return redirect()->route('members.index')
+        return redirect()->route('admin.members.index')
                     ->with('success', 'Data member berhasil diperbarui');
     }
 
@@ -63,13 +73,13 @@ class MemberController extends Controller
         // Hapus data member
         $member->delete();
         
-        return redirect()->route('members.index')
+        return redirect()->route('admin.members.index')
                     ->with('success', 'Member berhasil dihapus');
     }
     
     public function create()
     {
-        return view('membership.daftar'); // Sesuaikan dengan nama view Anda
+        return view('membership.daftar'); 
     }
 
     public function store(Request $request)

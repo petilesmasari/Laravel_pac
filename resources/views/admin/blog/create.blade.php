@@ -36,7 +36,7 @@
             </div>
 
             <div class="form-group mb-4">
-                <label for="">Artike Berita</label>
+                <label for="">Artikel Berita</label>
                 <textarea name="desc" id="summernote">
                     {{ old('desc') }}
                 </textarea>

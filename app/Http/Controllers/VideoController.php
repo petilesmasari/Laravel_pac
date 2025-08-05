@@ -33,7 +33,7 @@ class VideoController extends Controller
             'youtube_code' => $request->youtube_code,
         ]);
 
-        return redirect(route('video'))->with('success', 'data video berhasil di simpan');
+        return redirect(route('videos'))->with('success', 'data video berhasil di simpan');
     }
 
     public function update(Request $request, int $id)
@@ -57,20 +57,20 @@ class VideoController extends Controller
             'youtube_code' => $request->youtube_code,
         ]);
 
-        return redirect(route('video'))->with('success', 'data video berhasil di update');
+        return redirect(route('videos'))->with('success', 'data video berhasil di update');
     }
 
     public function destroy(Request $request, int $id)
     {
         $video = Video::find($id);
         $video->delete();
-        return redirect(route('video'))->with('success', 'data video berhasil di hapus');
+        return redirect(route('videos'))->with('success', 'data video berhasil di hapus');
     }
 
     public function videoFrontend()
     {
-        $videos = Video::orderBy('id', 'desc')->get(); // Sesuaikan dengan nama model
-        return view('video.index', compact('videos')); // Ganti 'video.index' sesuai nama file blade-nya
+        $videos = Video::orderBy('id', 'desc')->get(); 
+        return view('video.index', compact('videos')); 
     }
 
 }

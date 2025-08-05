@@ -3,7 +3,7 @@
 @section('title', 'Daftar Jadi Member')
 
 @section('content')
-<section id="berita" style="margin-top: 50px">
+<section id="daftar" style="margin-top: 50px">
     <div class="container py-5">
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6">

@@ -10,9 +10,9 @@
         </div>
 
         <ul>
-            <li>Usia minimal 10 tahun</li>
-            <li>Sehat jasmani dan rohani</li>
-            <li>Membawa fotokopi identitas (KTP/Kartu Pelajar)</li>
+            <li>Minimal berusia 7 tahun atau kelas 1 SD</li>
+            <li>Sudah mengikuti Kelas atau Archery Training</li>
+            <li>Memiliki peralatan memanah sendiri (fullset) sesuai divisi yang diminati (Divisi nasional, barebow, recurve atau compound)</li>
             <li>Mengisi formulir pendaftaran</li>
             <li>Melakukan pembayaran biaya pendaftaran</li>
         </ul>

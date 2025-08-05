@@ -53,7 +53,7 @@
 
 
         {{-- content --}}
-        @yield('content');
+        @yield('content')
 
         {{-- Footer --}}
         <section id="footer" data-aos="zoom-in-up">

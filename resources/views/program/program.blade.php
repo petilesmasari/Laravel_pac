@@ -4,16 +4,21 @@
 <section id="program" style="margin-top: 56px">
     <div class="container py-5">
         <div class="header text-center py-4">
-            <h2>Program Kami</h2>
-            <p class="lead">Pilih program terbaik untuk kebutuhan Anda</p>
+            <h2>Program Pontianak Archery Club</h2>
+            <p class="lead">Jelajahi Program Kami & Temukan yang Paling Cocok untuk Anda</p>
         </div>                      
 
         <div class="row">
             @forelse($programs as $program)
                 <div class="col-md-4 mb-4">
-                    <div class="card shadow-sm h-100">
+                    <div class="card border-0 h-100">
                         @if($program->gambar)
-                            <img src="{{ asset('storage/program/'.$program->gambar) }}" class="card-img-top" alt="{{ $program->nama }}">
+                            <div class="bg-white rounded-3 mx-3 mt-3">
+                                <img src="{{ asset('storage/programs/'.$program->gambar) }}"
+                                class="img-fluid rounded-3"
+                                alt="{{ $program->nama }}"
+                                style="width: 100%; height: 200px; object-fit: cover;">
+                            </div>
                         @endif
                         <div class="card-body">
                             <h5 class="card-title">{{ $program->nama }}</h5>

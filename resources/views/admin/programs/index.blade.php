@@ -44,14 +44,14 @@
                         <td>{{ $program->harga ? 'Rp '.number_format($program->harga, 0, ',', '.') : '-' }}</td>
                         <td>
                             @if($program->gambar)
-                                <img src="{{ asset('storage/program/' . $program->gambar) }}" width="100" class="img-thumbnail">
+                                <img src="{{ asset('storage/programs/' . $program->gambar) }}" width="100">
                             @else
                                 <span class="text-muted">-</span>
                             @endif
                         </td>
                         <td>
                             <a href="#" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#programModal{{$program->id}}">Edit</a>
-                            <form action="{{route('program.destroy', $program->id)}}" method="post" class="d-inline">
+                            <form action="{{route('programs.destroy', $program->id)}}" method="post" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin akan menghapus data ini?')">
@@ -70,7 +70,7 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form action="{{ route('program.update', $program->id) }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('programs.update', $program->id) }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
                                     <input type="hidden" name="id_program" value="{{ $program->id }}">
@@ -109,7 +109,7 @@
                                         <label for="gambar">Gambar</label>
                                         @if($program->gambar)
                                         <div class="mb-2">
-                                            <img src="{{ asset('storage/program/' . $program->gambar) }}" width="100" class="img-thumbnail">
+                                            <img src="{{ asset('storage/programs/' . $program->gambar) }}" width="100">
                                         </div>
                                         @endif
                                         <input type="file" name="gambar" id="gambar" class="form-control @error('gambar') is-invalid @enderror">
@@ -141,7 +141,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('program.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('programs.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <div class="form-group mb-3">

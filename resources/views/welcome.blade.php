@@ -18,25 +18,25 @@
                 <div class="row">
                     <div class="col-lg-3 col-6 mb-2" data-aos="fade-up">
                         <div class="d-flex justify-content-between align-items-center p-3 rounded-3 bg-white shadow">
-                            <p class="font-bold">Atlit <br> Berkualitas</p>
+                            <p class="font-bold">Tenang</p>
                             <img src="{{ asset('assets/images/ic-book.png')}}" width="50" height="50" alt="Buku" >
                         </div>
                     </div>
                     <div class="col-lg-3 col-6 mb-2" data-aos="fade-up">
                         <div class="d-flex justify-content-between align-items-center p-3 rounded-3 bg-white shadow">
-                            <p class="font-bold">Atlit <br> Berakhlak</p>
+                            <p class="font-bold">Fokus</p>
                             <img src="{{ asset('assets/images/ic-globe.png')}}" width="50" height="50" alt="Buku">
                         </div>
                     </div>
                     <div class="col-lg-3 col-6 mb-2" data-aos="fade-up">
                         <div class="d-flex justify-content-between align-items-center p-3 rounded-3 bg-white shadow">
-                            <p class="font-bold">Atlit <br> Berprestasi</p>
+                            <p class="font-bold">Menang</p>
                             <img src="{{ asset('assets/images/ic-panah.png')}}" width="50" height="50" alt="Buku" >
                         </div>
                     </div>
                     <div class="col-lg-3 col-6 mb-2" data-aos="fade-up">
                         <div class="d-flex justify-content-between align-items-center p-3 rounded-3 bg-white shadow">
-                            <p class="font-bold">Atlit <br>Cerdas</p>
+                            <p class="font-bold">Berprestasi</p>
                             <img src="{{ asset('assets/images/ic-komputer.png')}}" width="50" height="50" alt="Buku">
                         </div>
                     </div>
@@ -60,7 +60,6 @@
                             <div class="px-2 py-3">
                                 <p class="mb-3">{{$item->created_at}}</p>
                                 <h4 class="mb-3 font-bold">{{$item->judul}}</h4>
-                                <p class="mb-3">#panahankeren</p>
                                 <a href="/detail/{{ $item->slug }}" class="mb-3 text-danger text-decoration-none">Selengkapnya</a>
                             </div>
                         </div>

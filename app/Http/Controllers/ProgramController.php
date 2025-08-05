@@ -41,11 +41,11 @@ class ProgramController extends Controller
             'gambar' => $fileName,
         ]);
 
-        return redirect()->route('programs.index')->with('success', 'Data program berhasil disimpan');
+        return redirect()->route('programs')->with('success', 'Data program berhasil disimpan');
     }
 
     public function update(Request $request, $id) {
-        $program = Program::findOrFail($id);
+        $program = Program::find($id);
 
         // Jika ada gambar baru
         if ($request->hasFile('gambar')) {
@@ -71,9 +71,10 @@ class ProgramController extends Controller
         // Cek jika ada gambar baru
         if ($request->hasFile('gambar')) {
             // Hapus gambar lama jika ada
-            if (File::exists('storage/programs/' . $program->gambar)) {
-                File::delete('storage/programs/' . $program->gambar);
-            }
+            if (File::exists(storage_path('app/public/programs/' . $program->gambar))) {
+            File::delete(storage_path('app/public/programs/' . $program->gambar));
+        }
+
             
             $fileName = time() . '.' . $request->gambar->extension();
             $request->file('gambar')->storeAs('public/programs/', $fileName);
@@ -85,20 +86,22 @@ class ProgramController extends Controller
         $program->harga = $request->harga;
         $program->save();
 
-        return redirect()->route('programs.index')->with('success', 'Data program berhasil diupdate');
+        return redirect(route('programs'))->with('success', 'data program berhasil di update');
     }
 
     public function destroy($id) {
         $program = Program::findOrFail($id);
         
         // Hapus gambar jika ada
-        if (File::exists('storage/programs/' . $program->gambar)) {
-            File::delete('storage/programs/' . $program->gambar);
+        $path = storage_path('app/public/programs/' . $program->gambar);
+        if (File::exists($path)) {
+            File::delete($path);
         }
+
         
-        $program->delete();
+        $program->delete();   
+        return redirect(route('programs'))->with('success', 'data program berhasil di hapus');
         
-        return redirect()->route('programs.index')->with('success', 'Data berhasil dihapus');
     }
 
     public function programFrontend() {
