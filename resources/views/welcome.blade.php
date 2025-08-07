@@ -6,7 +6,7 @@
             <div class="container">
                 <div class="hero-title text-center" data-aos="fade-up">
                     <div class="hero-text">Selamat Datang <br> Di Pontianak Archery Club </div>
-                    <h5>Jadilah Bagian dari Keluarga Besar Pontianak Archery Club</h5>
+                    <h5>Belajar Panahan Jadi Asyik dan Menyenangkan</h5>
                 </div>
             </div>
         </section>

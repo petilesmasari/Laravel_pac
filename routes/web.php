@@ -34,6 +34,8 @@ Route::controller(\App\Http\Controllers\AuthController::class)->group(function()
     Route::post('/logout', 'logout')->middleware('auth');
 });
 
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
 // Route::controller(\App\Http\Controllers\DashboardController::class)->group(function () {
 //     Route::get('/dashboard', 'index')->name('dashboard')->middleware('auth');
 //     Route::get('/blog', function () {
@@ -108,9 +110,6 @@ Route::middleware('auth')->controller(\App\Http\Controllers\SkorController::clas
     Route::get('/skors/export-pdf/{bulan}', 'exportPDF')->name('skors.export.pdf');
 });
 
-
-Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
-
 // Route untuk pendaftaran member
 Route::prefix('membership')->group(function () {
     Route::get('/daftar', function () {return redirect()->route('daftar');});
@@ -122,7 +121,7 @@ Route::prefix('membership')->group(function () {
 // Untuk pengunjung
 Route::get('/members', [MemberController::class, 'index']);
 
-// Untuk admin yang sudah login
+// Untuk admin 
 Route::middleware('auth')->prefix('admin')->name('admin.')->controller(MemberController::class)->group(function () {
     Route::get('/members', 'index')->name('members.index');
     Route::get('/members/create', 'create')->name('members.create');

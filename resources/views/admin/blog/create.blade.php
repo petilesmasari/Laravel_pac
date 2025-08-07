@@ -7,15 +7,15 @@
         <div class="d-flex mb-3">
             <a href="{{route('blog')}}" class="text-decoration-none">Blog</a>
             <div class="mx-1">/</div>
-            <a href="{{route('blog.create')}}" class="text-decoration-none">Buat Artikel</a>
+            <a href="{{route('blog.create')}}" class="text-decoration-none">Buat Berita</a>
         </div>
 
-        <h4 class="fw-bold mb-3">Halaman Buat Artikel</h4>
+        <h4 class="fw-bold mb-3">Halaman Buat Berita</h4>
 
         <form action="{{ route('blog.store')}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form-group mb-4">
-                <label for="">Masukan Judul Kegiatan</label>
+                <label for="">Masukan Judul Berita</label>
                 <input type="text" class="form-control @error('judul') is-invalid @enderror" name="judul" value="{{ old('judul') }}">
                 @error('judul')
                 <div class="invalid-feedback">
@@ -25,7 +25,7 @@
             </div>
 
             <div class="form-group mb-4">
-                <label for="">Pilih Photo Kegiatan</label>
+                <label for="">Pilih Foto Kegiatan</label>
                 <input type="file" class="form-control @error('image') is-invalid @enderror" name="image">
 
                 @error('image')

@@ -19,7 +19,7 @@
                   <img src="{{ asset('assets/images/logo_pac.png') }}" alt="Best Skor" class="mb-3" style="width:60px; height:auto;">
                   <i class="fa-solid fa-bullseye fa-3x mb-3 text-danger"></i>
                   <h5 class="card-title">Best Skor</h5>
-                  <p class="card-text">Kelola Skor</p>
+                  <p class="card-text">Kelola Skor Latihan Bulanan PAC</p>
                   <a href="/skors" class="btn btn-danger btn-sm w-100">Detail</a>
                 </div>
               </div>
@@ -31,7 +31,7 @@
                 <div class="card-body">
                   <img src="{{ asset('assets/images/logo_pac.png') }}" alt="Best Skor" class="mb-3" style="width:60px; height:auto;">
                   <i class="fa-solid fa-newspaper fa-3x mb-3 text-danger"></i>
-                  <h5 class="card-title">Blog Artikel</h5>
+                  <h5 class="card-title">Berita</h5>
                   <p class="card-text">Kelola artikel kegiatan PAC</p>
                   <a href="/blog" class="btn btn-danger btn-sm w-100">Detail</a>
                 </div>
@@ -44,7 +44,7 @@
                 <div class="card-body">
                   <img src="{{ asset('assets/images/logo_pac.png') }}" alt="Best Skor" class="mb-3" style="width:60px; height:auto;">
                   <i class="fa-solid fa-images fa-3x mb-3 text-danger"></i>
-                  <h5 class="card-title">Photo Kegiatan</h5>
+                  <h5 class="card-title">Foto Kegiatan</h5>
                   <p class="card-text">Kelola galeri foto kegiatan PAC</p>
                   <a href="/photo" class="btn btn-danger btn-sm w-100">Detail</a>
                 </div>
@@ -71,7 +71,7 @@
                   <img src="{{ asset('assets/images/logo_pac.png') }}" alt="Best Skor" class="mb-3" style="width:60px; height:auto;">
                   <i class="fa-solid fa-user-plus fa-3x mb-3 text-danger"></i>
                   <h5 class="card-title">Pendaftaran Anggota</h5>
-                  <p class="card-text">Kelola Data Anggota</p>
+                  <p class="card-text">Kelola Data Pendaftaran Anggota PAC</p>
                   <a href="/members" class="btn btn-danger btn-sm w-100">Detail</a>
                 </div>
               </div>
@@ -84,7 +84,7 @@
                   <img src="{{ asset('assets/images/logo_pac.png') }}" alt="Best Skor" class="mb-3" style="width:60px; height:auto;">
                   <i class="fa-solid fa-clipboard-list fa-3x mb-3 text-danger"></i>
                   <h5 class="card-title">Program</h5>
-                  <p class="card-text">Kelola Data Program</p>
+                  <p class="card-text">Kelola Data Program PAC</p>
                   <a href="/programs" class="btn btn-danger btn-sm w-100">Detail</a>
                 </div>
               </div>

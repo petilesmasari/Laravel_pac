@@ -20,8 +20,6 @@
 
                         <form action="{{ route('membership.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-
-    
                             
                             <div class="mb-3">
                                 <label class="form-label">Nama Lengkap <span class="text-danger">*</span></label>

@@ -31,6 +31,13 @@
                 <p class="text-center">Belum ada program tersedia.</p>
             @endforelse
         </div>
+
+        {{-- Keterangan Pembayaran --}}
+        <div class="text-center">
+            <p class="fw-bold">Pembayaran via transfer Bank Syariah Indonesia melalui No Rek <span class="text-danger">7101658737</span> a.n. <span class="text-danger">Jumadi</span></p>
+            <p>Untuk Informasi lebih lanjut silakan hubungi admin</p>
+        </div>
+
     </div>
 </section>
 @endsection

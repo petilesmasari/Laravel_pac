@@ -7,10 +7,10 @@
         <div class="d-flex mb-3">
             <a href="{{route('dashboard')}}" class="text-decoration-none">Home</a>
             <div class="mx-1">/</div>
-            <a href="{{route('blog')}}" class="text-decoration-none">Blog Artikel</a>
+            <a href="{{route('blog')}}" class="text-decoration-none">Blog Berita</a>
         </div>
 
-        <h4 class="fw-bold mb-3">Halaman Blog Artikel</h4>
+        <h4 class="fw-bold mb-3">Halaman Blog Berita</h4>
 
         <a href="{{ route('blog.create') }}" class="btn btn-primary mb-2">Buat Artikel</a>
 
