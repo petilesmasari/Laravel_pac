@@ -2,11 +2,13 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\SkorController;
 use App\Http\Controllers\VideoController;
+use App\Models\Event;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -105,6 +107,7 @@ Route::get('/skor', [SkorController::class, 'skorFrontend'])->name('skorfrontend
 Route::middleware('auth')->controller(\App\Http\Controllers\SkorController::class)->group(function () {
     Route::get('/skors', 'index')->name('skors'); // halaman admin
     Route::post('/skors/store', 'store')->name('skors.store');
+    Route::get('/skors/edit/{id}', 'edit')->name('skors.edit');
     Route::put('/skors/update/{id}', 'update')->name('skors.update');
     Route::delete('/skors/destroy/{id}', 'destroy')->name('skors.destroy');
     Route::get('/skors/export-pdf/{bulan}', 'exportPDF')->name('skors.export.pdf');
@@ -131,6 +134,27 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->controller(MemberCon
     Route::put('/members/{member}', 'update')->name('members.update');
     Route::delete('/members/{member}', 'destroy')->name('members.destroy');
 });
+
+Route::middleware('auth')->controller(\App\Http\Controllers\EventController::class)->group(function () {
+    Route::get('/event', 'index')->name('event');
+    Route::get('/event/create', 'create')->name('event.create');
+    Route::post('/event/store', 'store')->name('event.store');
+    Route::get('/event/edit/{id}', 'edit')->name('event.edit');
+    Route::post('/event/update/{id}', 'update')->name('event.update');
+    Route::post('/event/destroy/{id}', 'destroy')->name('event.destroy');
+});
+
+Route::controller(\App\Http\Controllers\AppController::class)->group(function() {
+    Route::get('/', 'index')->name('home');
+    Route::get('/events', 'event')->name('events');
+    Route::get('/events/detail/{slug}', 'detail')->name('events.detail');
+});
+Route::get('/events/detail/{slug}', [EventController::class, 'detail'])->name('events.detail');
+
+
+
+
+
 
 
 

@@ -15,27 +15,19 @@ class SkorController extends Controller
 
     public function store(Request $request)
     {
-        $rules = [
-            'nama' => 'required',
+        $request->validate([
+            'nama' => 'required|string|max:255',
             'tanggal' => 'required|date',
             'skor' => 'required|numeric',
-        ];
-
-        $messages = [
+        ], [
             'nama.required' => 'Nama wajib diisi!',
             'tanggal.required' => 'Tanggal wajib diisi!',
             'tanggal.date' => 'Tanggal tidak valid!',
             'skor.required' => 'Skor wajib diisi!',
             'skor.numeric' => 'Skor harus berupa angka!',
-        ];
-
-        $this->validate($request, $rules, $messages);
-
-        Skor::create([
-            'nama' => $request->nama,
-            'tanggal' => $request->tanggal,
-            'skor' => $request->skor,
         ]);
+
+        Skor::create($request->only(['nama', 'tanggal', 'skor']));
 
         return redirect()->route('skors')->with('success', 'Skor berhasil ditambahkan');
     }
@@ -48,30 +40,22 @@ class SkorController extends Controller
 
     public function update(Request $request, $id)
     {
-        $rules = [
-            'nama' => 'required',
+        $request->validate([
+            'nama' => 'required|string|max:255',
             'tanggal' => 'required|date',
             'skor' => 'required|numeric',
-        ];
-
-        $messages = [
+        ], [
             'nama.required' => 'Nama wajib diisi!',
             'tanggal.required' => 'Tanggal wajib diisi!',
             'tanggal.date' => 'Tanggal tidak valid!',
             'skor.required' => 'Skor wajib diisi!',
             'skor.numeric' => 'Skor harus berupa angka!',
-        ];
-
-        $this->validate($request, $rules, $messages);
-
-        $skor = Skor::findOrFail($id);
-        $skor->update([
-            'nama' => $request->nama,
-            'tanggal' => $request->tanggal,
-            'skor' => $request->skor,
         ]);
 
-        return redirect()->route('skors')->with('success', 'Skor berhasil diupdate');
+        $skor = Skor::findOrFail($id);
+        $skor->update($request->only(['nama', 'tanggal', 'skor']));
+
+        return redirect()->route('skors')->with('success', 'Skor berhasil diperbarui');
     }
 
     public function destroy($id)

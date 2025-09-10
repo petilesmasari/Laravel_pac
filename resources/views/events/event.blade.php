@@ -1,38 +1,38 @@
 @extends('layouts.layouts')
 
 @section('content')
-{{-- Berita --}}
-<section id="berita" style="margin-top: 50px">
+{{-- Event --}}
+<section id="event" style="margin-top: 50px">
     <div class="container py-5">
         <div class="header text-center py-4">
-            <h2>Berita Kegiatan Pontianak Archery Club</h2>
+            <h2>Event Pontianak Archery Club</h2>
         </div>
 
-        {{-- CSS khusus untuk gambar --}}
+        {{-- CSS supaya ukuran gambar sama --}}
         <style>
-            .berita-img {
+            .fixed-img {
                 width: 100%;
-                height: 220px; 
-                object-fit: cover; 
+                height: 220px; /* bisa diganti sesuai kebutuhan, misal 250px */
+                object-fit: cover; /* biar gambar tidak gepeng */
                 border-top-left-radius: 0.5rem;
                 border-top-right-radius: 0.5rem;
             }
         </style>
 
         <div class="row">
-            @foreach ($artikels as $item)
+            @foreach ($events as $item)
             <div class="col-lg-4 mb-4" data-aos="flip-up">
                 <div class="card border-0 shadow h-100 d-flex flex-column">
-                    <img src="{{ asset('storage/artikel/' . $item->image)}}" 
-                        alt="{{ $item->judul }}" 
-                        class="card-img-top berita-img">
+                    <img src="{{ asset('storage/event/' . $item->image)}}" 
+                         alt="{{ $item->judul }}" 
+                         class="card-img-top fixed-img">
 
                     <div class="px-2 py-3">
                         <p class="mb-3">
                             {{ $item->created_at->timezone('Asia/Jakarta')->format('Y-m-d H:i:s') }}
                         </p>
                         <h4 class="mb-3 font-bold">{{ $item->judul }}</h4>
-                        <a href="/detail/{{ $item->slug }}" 
+                        <a href="/events/detail/{{ $item->slug }}" 
                            class="mb-3 text-danger text-decoration-none">
                            Selengkapnya
                         </a>
@@ -43,5 +43,5 @@
         </div>
     </div>
 </section>
-{{-- End Berita --}}
+{{-- End Event --}}
 @endsection

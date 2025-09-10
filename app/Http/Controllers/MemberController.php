@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Member;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon; 
 
 class MemberController extends Controller
 {
@@ -12,7 +13,6 @@ class MemberController extends Controller
     {
         $query = Member::query();
 
-        // Filter berdasarkan status jika ada query ?status=...
         if ($request->filled('status')) {
             $query->where('status', $request->status);
         }
@@ -22,20 +22,22 @@ class MemberController extends Controller
         return view('admin.members.index', compact('members'));
     }
 
-        // Form edit member
     public function edit($id)
     {
         $member = Member::findOrFail($id);
         return view('admin.members.edit', compact('member'));
     }
 
-    // Proses update member
     public function update(Request $request, Member $member)
     {
         $validated = $request->validate([
             'nama' => 'required|string|max:255',
             'jenis_kelamin' => 'required|in:Laki-laki,Perempuan',
-            'tanggal_lahir' => 'required|date',
+            'tanggal_lahir' => ['required', 'date', function ($attribute, $value, $fail) {
+                if (Carbon::parse($value)->age < 7) {
+                    $fail('Umur minimal adalah 7 tahun.');
+                }
+            }],
             'pekerjaan' => 'required|string|max:255',
             'telepon' => 'required|string|max:20',
             'status' => 'required|in:pendaftar,anggota aktif,keluar',
@@ -63,12 +65,10 @@ class MemberController extends Controller
 
     public function destroy(Member $member)
     {
-        // Hapus file bukti pembayaran jika ada
         if ($member->bukti_pembayaran_path) {
             Storage::delete('public/'.$member->bukti_pembayaran_path);
         }
         
-        // Hapus data member
         $member->delete();
         
         return redirect()->route('admin.members.index')
@@ -85,7 +85,11 @@ class MemberController extends Controller
         $validated = $request->validate([
             'nama' => 'required|string|max:255',
             'jenis_kelamin' => 'required|in:Laki-laki,Perempuan',
-            'tanggal_lahir' => 'required|date',
+            'tanggal_lahir' => ['required', 'date', function ($attribute, $value, $fail) {
+                if (Carbon::parse($value)->age < 7) {
+                    $fail('Umur minimal adalah 7 tahun.');
+                }
+            }],
             'alamat' => 'required|string',
             'telepon' => 'required|string|max:20',
             'email' => 'nullable|email',
@@ -95,13 +99,11 @@ class MemberController extends Controller
             'bukti_pembayaran' => 'required|file|mimes:jpg,png,pdf|max:2048',
         ]);
 
-        // Simpan file bukti pembayaran
         if ($request->hasFile('bukti_pembayaran')) {
             $path = $request->file('bukti_pembayaran')->store('bukti_pembayaran', 'public');
             $validated['bukti_pembayaran_path'] = $path;
         }
 
-        // Buat record member baru
         Member::create($validated);
 
         return redirect()->route('membership.daftar')

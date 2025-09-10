@@ -89,6 +89,18 @@
                 </div>
               </div>
             </div>
+
+            <!-- Event -->
+            <div class="col-sm-6 col-lg-4">
+              <div class="card text-center shadow-sm rounded-3 border-0 h-100 hover-shadow">
+                <div class="card-body">
+                  <img src="{{ asset('assets/images/logo_pac.png') }}" alt="Best Skor" class="mb-3" style="width:60px; height:auto;">
+                  <i class="fa-solid fa-clipboard-list fa-3x mb-3 text-danger"></i>
+                  <h5 class="card-title">Event</h5>
+                  <p class="card-text">Kelola Data Event PAC</p>
+                  <a href="/event" class="btn btn-danger btn-sm w-100">Detail</a>
+                </div>
+              </div>
           </div>
         </main>
       </div>

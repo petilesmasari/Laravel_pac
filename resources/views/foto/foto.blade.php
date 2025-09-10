@@ -2,11 +2,11 @@
 
 @section('content')
 {{-- Galeri Foto --}}
-<section id="berita" style="margin-top: 50px">
-    <div class="container py-5">
-        <div class="header text-center py-4">
-            <h2>Foto Kegiatan Pontianak Archery Club</h2>
-        </div>
+<section id="foto" class="parallax" data-aos="zoom-in-up" style="margin-top: 50px">
+            <div class="container">
+                <div class="header text-center py-4">
+                    <h2>Foto Kegiatan Pontianak Archery Club</h2>
+                </div>
 
         <div class="row p-4">
                     @foreach ($photos as $photo)

@@ -56,12 +56,15 @@
                     <td>{{ \Carbon\Carbon::parse($skor->tanggal)->format('d M Y') }}</td>
                     <td>{{ $skor->skor }}</td>
                     <td>
-                        <form action="{{ route('skors.destroy', $skor->id) }}" method="POST" onsubmit="return confirm('Hapus data ini?')">
+                        <a href="{{ route('skors.edit', $skor->id) }}" class="btn btn-sm btn-warning">Edit</a>
+
+                        <form action="{{ route('skors.destroy', $skor->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Hapus data ini?')">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-sm btn-danger">Hapus</button>
                         </form>
                     </td>
+
                 </tr>
                 @endforeach
             </tbody>

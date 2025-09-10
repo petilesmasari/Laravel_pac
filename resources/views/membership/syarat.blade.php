@@ -11,8 +11,8 @@
 
         <ul>
             <li>Minimal berusia 7 tahun atau kelas 1 SD</li>
-            <li>Sudah mengikuti Kelas atau Archery Training</li>
-            <li>Memiliki peralatan memanah sendiri (fullset) sesuai divisi yang diminati (Divisi nasional, barebow, recurve atau compound)</li>
+            <li>Bersedia mengikuti Kelas atau Archery Training dalam kurun satu bulan</li>
+            <li>Memiliki peralatan memanah sendiri (fullset)</li>
             <li>Mengisi formulir pendaftaran</li>
             <li>Melakukan pembayaran biaya pendaftaran</li>
         </ul>

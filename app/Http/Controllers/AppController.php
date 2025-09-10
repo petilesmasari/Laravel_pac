@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Event;
 use App\Models\Photo;
 use App\Models\Program;
 use App\Models\Video;
@@ -34,4 +35,23 @@ class AppController extends Controller
             'artikel' => $artikel
         ]);
     }
+
+    public function event()
+    {
+        $events = Event::orderBy('id', 'desc')->get();
+
+        return view('events.event', [
+            'events' => $events
+        ]);
+    }
+
+    public function eventDetail($slug)
+    {
+        $event = Event::where('slug', $slug)->firstOrFail();
+
+        return view('events.detail', [ 
+            'event' => $event
+        ]);
+    }
+
 }

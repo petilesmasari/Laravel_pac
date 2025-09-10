@@ -40,6 +40,9 @@
                 <li class="nav-item">
                     <a class="nav-link text-dark" href="/berita">Berita</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="/events">Event</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
