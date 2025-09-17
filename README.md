@@ -119,10 +119,4 @@ Kontribusi, saran, dan perbaikan sangat diterima. Silakan fork repository ini, b
 
 ---
 
-## 📄 License
-
-![GitHub license](https://img.shields.io/github/license/username/repo-name)
-Project ini open-source dan dilisensikan di bawah [MIT License](LICENSE).
-
----
 
