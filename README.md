@@ -1,11 +1,5 @@
 # 🎯 Website Profile & Membership Pontianak Archery Club
 
-![GitHub Repo stars](https://img.shields.io/github/stars/username/repo-name?style=social)
-![GitHub forks](https://img.shields.io/github/forks/username/repo-name?style=social)
-![GitHub issues](https://img.shields.io/github/issues/username/repo-name)
-![GitHub license](https://img.shields.io/github/license/username/repo-name)
-![GitHub last commit](https://img.shields.io/github/last-commit/username/repo-name)
-
 ---
 
 ## 📖 Tentang Project
