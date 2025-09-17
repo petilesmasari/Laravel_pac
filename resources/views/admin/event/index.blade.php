@@ -10,7 +10,7 @@
             <a href="{{route('event')}}" class="text-decoration-none">Event</a>
         </div>
 
-        <h4 class="fw-bold mb-3">Halaman Event</h4>
+        <h4 class="fw-bold mb-3">Halaman manajemen Event</h4>
 
         <a href="{{ route('event.create') }}" class="btn btn-primary mb-2">Buat Event</a>
 

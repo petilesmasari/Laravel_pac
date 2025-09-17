@@ -115,14 +115,6 @@
                                 @error('status') <div class="invalid-feedback">{{ $message }}</div> @enderror
                             </div>
 
-                            {{-- Program --}}
-                            <div class="mt-3">
-                                <label class="form-label">Program <span class="text-danger">*</span></label>
-                                <input type="text" name="program" class="form-control @error('program') is-invalid @enderror"
-                                    value="{{ old('program', $member->program) }}" required>
-                                @error('program') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                            </div>
-
                             {{-- Metode Pembayaran --}}
                             <div class="mt-3">
                                 <label class="form-label">Metode Pembayaran <span class="text-danger">*</span></label>
